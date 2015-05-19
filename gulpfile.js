@@ -3,7 +3,7 @@ var gulp       = require('gulp'),
 
 gulp.task('default', ['build', 'watch']);
 
-var tsProject = typescript.createProject({ typescript: require('typescript') });
+var tsProject = typescript.createProject({ module: 'commonjs', typescript: require('typescript') });
 gulp.task('typescript', function() {
     return gulp.src('*.ts')
         .pipe(typescript(tsProject))
